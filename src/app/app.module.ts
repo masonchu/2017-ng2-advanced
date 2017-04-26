@@ -9,7 +9,7 @@ import { Page1Component } from './page1/page1.component';
 import { Page2Component } from './page2/page2.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CardComponent } from './card/card.component';
-import { FlotComponent } from './charts/flot/flot.component';
+import { ChartsModule } from 'app/charts/charts.module';
 
 @NgModule({
   declarations: [
@@ -18,12 +18,12 @@ import { FlotComponent } from './charts/flot/flot.component';
     Page2Component,
     DashboardComponent,
     CardComponent,
-    FlotComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    ChartsModule,
     AppRoutingModule
   ],
   providers: [],

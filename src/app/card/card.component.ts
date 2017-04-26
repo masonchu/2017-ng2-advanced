@@ -24,8 +24,8 @@ export class CardComponent implements OnInit {
   }
 
   GoNext(num: number) {
-    let nextid = this.type + num;
-    this.router.navigate(['..', nextid], {
+    const nextid = this.type + num;
+    this.router.navigate(['..', nextid, { num: nextid }], {
       relativeTo: this.route
     });
   }
