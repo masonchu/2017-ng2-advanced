@@ -23,7 +23,7 @@ import { ChartsModule } from 'app/charts/charts.module';
     BrowserModule,
     FormsModule,
     HttpModule,
-    ChartsModule,
+    // ChartsModule,
     AppRoutingModule
   ],
   providers: [],

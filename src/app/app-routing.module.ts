@@ -1,4 +1,3 @@
-import { FlotComponent } from './charts/flot/flot.component';
 import { CardComponent } from './card/card.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NgModule } from '@angular/core';
@@ -11,7 +10,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'card/:type', component: CardComponent },
-
+  { path: 'charts', loadChildren: './charts/charts.module#ChartsModule' },
   fallbackRoute
 ];
 
