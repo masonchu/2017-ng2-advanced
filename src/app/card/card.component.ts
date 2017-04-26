@@ -8,18 +8,25 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class CardComponent implements OnInit {
 
-  type: string;
+  type: number;
   constructor(
     private router: Router,
-    private route: ActivatedRoute
+    public route: ActivatedRoute
   ) { }
 
   ngOnInit() {
     // this.type = this.route.params['type'];
-    this.route.params.subscribe(it => this.type = it['type']);
+    this.route.params.subscribe(it => this.type = +it['type']);
   }
   GoFlot() {
     // this.router.navigateByUrl('/chart/flot');
     this.router.navigate(['chart', 'flot']);
+  }
+
+  GoNext(num: number) {
+    let nextid = this.type + num;
+    this.router.navigate(['..', nextid], {
+      relativeTo: this.route
+    });
   }
 }
