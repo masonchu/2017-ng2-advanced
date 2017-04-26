@@ -10,7 +10,7 @@ import { fallbackRoute } from 'app/shared/fullback-route';
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'card', component: CardComponent },
+  { path: 'card/:type', component: CardComponent },
   {
     path: 'charts', children: [
       { path: '', redirectTo: 'flot', pathMatch: 'full' },

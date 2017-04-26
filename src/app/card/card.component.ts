@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-card',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardComponent implements OnInit {
 
-  constructor() { }
+  type: string;
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit() {
+    // this.type = this.route.params['type'];
+    this.route.params.subscribe(it => this.type = it['type']);
   }
-
+  GoFlot() {
+    // this.router.navigateByUrl('/chart/flot');
+    this.router.navigate(['chart', 'flot']);
+  }
 }
