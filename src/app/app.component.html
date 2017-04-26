@@ -3,8 +3,9 @@
 </h1>
 
 <ul>
-  <li><a [routerLink]="'/'">home</a></li>
-  <li><a [routerLink]="'/page1'">page1</a></li>
-  <li><a [routerLink]="'/page2'">page2</a></li>
+  <!--[routerLinkActiveOptions]-->
+  <li [routerLinkActive]="'active'"><a [routerLink]="'/'">home</a></li>
+  <li [routerLinkActive]="'active'"><a [routerLink]="'/page1'">page1</a></li>
+  <li [routerLinkActive]="'active'"><a [routerLink]="'/page2'">page2</a></li>
 </ul>
 <router-outlet></router-outlet>
