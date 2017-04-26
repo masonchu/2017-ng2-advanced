@@ -1,4 +1,4 @@
-# Ng2Advanced
+# 《台北》Angular 2 開發實戰：進階開發篇(平日班) 課程練習
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-beta.32.3.
 
