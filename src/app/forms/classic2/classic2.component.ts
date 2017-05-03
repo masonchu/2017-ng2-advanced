@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-classic2',
@@ -9,6 +9,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class Classic2Component implements OnInit {
 
   data = {
+    title: 'manager',
     name: {
       first: 'test',
       last: '111'
@@ -27,8 +28,17 @@ export class Classic2Component implements OnInit {
           Validators.minLength(10),
         ]),
       }),
+      addresses: new FormArray([
+        new FormControl('address 1', Validators.required),
+        new FormControl('address 2', Validators.required),
+      ])
     });
   }
+  addAddress() {
+    const addresses = this.form.controls['addresses'] as FormArray;
+    addresses.push(new FormControl('', Validators.required));
+  }
+
   doSubmit() {
     // this.form.control.markAsTouched();
     // _.keys(f.controls).array.forEach(key => {
