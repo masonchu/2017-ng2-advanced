@@ -9,6 +9,7 @@ import { Page2Component } from './page2/page2.component';
 import { fallbackRoute } from 'app/shared/fullback-route';
 import { LoginGuard } from 'app/login.guard';
 import { ClassicComponent } from 'app/forms/classic/classic.component';
+import { Classic2Component } from 'app/forms/classic2/classic2.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,7 @@ const routes: Routes = [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
       { path: 'forms/classic', component: ClassicComponent },
+      { path: 'forms/classic2', component: Classic2Component },
       { path: 'card/:type', component: CardComponent },
       {
         path: 'charts', loadChildren: './charts/charts.module#ChartsModule',

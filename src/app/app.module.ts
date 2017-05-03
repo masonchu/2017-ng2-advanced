@@ -14,6 +14,7 @@ import { LoginComponent } from './login/login.component';
 import { LoginGuard } from 'app/login.guard';
 import { LayoutComponent } from './layout/layout.component';
 import { ClassicComponent } from './forms/classic/classic.component';
+import { Classic2Component } from './forms/classic2/classic2.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ClassicComponent } from './forms/classic/classic.component';
     LoginComponent,
     LayoutComponent,
     ClassicComponent,
+    Classic2Component,
   ],
   imports: [
     BrowserModule,

@@ -3,53 +3,55 @@
   <section>
     <div class="container-fluid">
       <h5 class="mt0">Classic form controls and custom variants</h5>
-      <pre>f.value = {{f.value | json}}</pre>
-      <pre>f.valid = {{f.valid}}</pre>
-      <pre>f.invalid = {{f.invalid}}</pre>
-      <pre>f.dirty = {{f.dirty}}</pre>
-      <pre>f.pristine = {{f.pristine}}</pre>
-      <pre>f.touched = {{f.touched}}</pre>
-      <pre>f.untouched = {{f.untouched}}</pre>
+      <p class="mb-lg">Standard Bootstrap form and input controls with customized UI variations</p>
+      <pre>form.value = {{form.value | json}}</pre>
+      <pre>form.valid = {{form.valid}}</pre>
+      <pre>form.invalid = {{form.invalid}}</pre>
+      <pre>form.dirty = {{form.dirty}}</pre>
+      <pre>form.pristine = {{form.pristine}}</pre>
+      <pre>form.touched = {{form.touched}}</pre>
+      <pre>form.untouched = {{form.untouched}}</pre>
       <div class="card">
         <div class="card-body">
-          <form (ngSubmit)="doSubmit(f)" #f="ngForm" novalidate>
-            <fieldset ngModelGroup="secret" #groupSecret="ngModelGroup">
+          <form [formGroup]="form">
+            <fieldset>
               <div class="form-group">
-                <label class="col-sm-2 control-label">Name</label>
-                <div class="col-sm-10" [class.has-error]="fName.touched && fName.invalid">
-                  <input type="text" name="name" [ngModel]="data.name" #fName="ngModel" class="form-control rounded" />
+                <label class="col-sm-2 control-label">Name.First</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control rounded" [formControl]="form.controls.name.controls.first">
+                  <span class="help-block" *ngIf="form.controls.name.controls.first.touched && form.controls.name.controls.first.errors?.required">此欄位必填</span>
                   <span class="help-block">
-                    <pre>fName.valid = {{fName.valid}}</pre>
-                    <pre>fName.invalid = {{fName.invalid}}</pre>
-                    <pre>fName.dirty = {{fName.dirty}}</pre>
-                    <pre>fName.pristine = {{fName.pristine}}</pre>
-                    <pre>fName.touched = {{fName.touched}}</pre>
-                    <pre>fName.untouched = {{fName.untouched}}</pre>
+                    <pre>form.controls.name.controls.first.errors = {{form.controls.name.controls.first.errors | json}}</pre>
+                    <pre>form.controls.name.controls.first.valid = {{form.controls.name.controls.first.valid}}</pre>
+                    <pre>form.controls.name.controls.first.invalid = {{form.controls.name.controls.first.invalid}}</pre>
+                    <pre>form.controls.name.controls.first.dirty = {{form.controls.name.controls.first.dirty}}</pre>
+                    <pre>form.controls.name.controls.first.pristine = {{form.controls.name.controls.first.pristine}}</pre>
+                    <pre>form.controls.name.controls.first.touched = {{form.controls.name.controls.first.touched}}</pre>
+                    <pre>form.controls.name.controls.first.untouched = {{form.controls.name.controls.first.untouched}}</pre>
                   </span>
                 </div>
               </div>
             </fieldset>
             <fieldset>
               <div class="form-group">
-                <label class="col-sm-2 control-label">Sid</label>
-                <div class="col-sm-10" [class.has-error]="fSid.touched && fSid.invalid">
-                  <input type="text" class="form-control" name="sid" [ngModel]="data.sid" #fSid="ngModel" required minlength="10" maxlength="10">
-                  <span class="help-block" *ngIf="fSid.touched && fSid.errors?.required">此欄位必填</span>
+                <label class="col-sm-2 control-label">Name.Last</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" [formControl]="form.controls.name.controls.last">
                   <span class="help-block">
-                    <pre>fSid.errors = {{fSid.errors | json}}</pre>
-                    <pre>fSid.valid = {{fSid.valid}}</pre>
-                    <pre>fSid.invalid = {{fSid.invalid}}</pre>
-                    <pre>fSid.dirty = {{fSid.dirty}}</pre>
-                    <pre>fSid.pristine = {{fSid.pristine}}</pre>
-                    <pre>fSid.touched = {{fSid.touched}}</pre>
-                    <pre>fSid.untouched = {{fSid.untouched}}</pre>
+                    <pre>form.controls.name.controls.last.errors = {{form.controls.name.controls.last.errors | json}}</pre>
+                    <pre>form.controls.name.controls.last.valid = {{form.controls.name.controls.last.valid}}</pre>
+                    <pre>form.controls.name.controls.last.invalid = {{form.controls.name.controls.last.invalid}}</pre>
+                    <pre>form.controls.name.controls.last.dirty = {{form.controls.name.controls.last.dirty}}</pre>
+                    <pre>form.controls.name.controls.last.pristine = {{form.controls.name.controls.last.pristine}}</pre>
+                    <pre>form.controls.name.controls.last.touched = {{form.controls.name.controls.last.touched}}</pre>
+                    <pre>form.controls.name.controls.last.untouched = {{form.controls.name.controls.last.untouched}}</pre>
                   </span>
                 </div>
               </div>
             </fieldset>
             <fieldset>
               <input class="btn btn-default" type="submit" value="submit" />
-              <input class="btn btn-default" type="button" value="reset" (click)="doReset(f)"/>
+              <input class="btn btn-default" type="button" value="reset" (click)="doReset(f)" />
             </fieldset>
             <fieldset>
               <div class="form-group">
