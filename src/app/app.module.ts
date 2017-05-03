@@ -10,6 +10,9 @@ import { Page2Component } from './page2/page2.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CardComponent } from './card/card.component';
 import { ChartsModule } from 'app/charts/charts.module';
+import { LoginComponent } from './login/login.component';
+import { LoginGuard } from 'app/login.guard';
+import { LayoutComponent } from './layout/layout.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +21,8 @@ import { ChartsModule } from 'app/charts/charts.module';
     Page2Component,
     DashboardComponent,
     CardComponent,
+    LoginComponent,
+    LayoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,7 +31,7 @@ import { ChartsModule } from 'app/charts/charts.module';
     // ChartsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [LoginGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
