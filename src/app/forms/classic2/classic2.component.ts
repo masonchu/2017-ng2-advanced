@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormArray, AbstractControl } from '@angular/forms';
+import { ValidateSidFormat } from 'app/shared/ValidateSidFormat';
 
 @Component({
   selector: 'app-classic2',
@@ -26,6 +27,7 @@ export class Classic2Component implements OnInit {
           Validators.required,
           Validators.maxLength(10),
           Validators.minLength(10),
+          ValidateSidFormat
         ]),
       }),
       addresses: new FormArray([
